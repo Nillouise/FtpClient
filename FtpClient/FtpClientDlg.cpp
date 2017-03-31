@@ -402,6 +402,9 @@ bool CFtpClientDlg::DataConnectPossive(void)
 	if (!SendCommand())
 		return false;
 
+	m_Login += "Client: ";
+	m_Login += Command;
+	m_Login += "\n";
 	if (!RecvRespond())
 		return false;
 	else
